@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
 
 
-    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float speed = 0.5f;
     [SerializeField] private float jumpPower = 10.0f;
 
     [SerializeField] private LayerMask groundLayer;
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
 
     private float horizontalInput;
+    private float verticalInput;
 
     private Vector3 positionDiff;
     private void Awake()
@@ -52,26 +53,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //make a new vector and only copy the up-down position, we dont want camera to follow the player left-right
-        mainCamera.transform.position = transform.position + positionDiff;
-        invincibilityCountdown -= 1;
-
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (horizontalInput > 0.01f)
-        {
-            transform.localScale = Vector3.one;
-
-        }
-        else if (horizontalInput < -0.01f)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+       
 
 
     }
 
+    void FixedUpdate()
+    {
+        //Camera Movement
+        //mainCamera.transform.position = transform.position + positionDiff;
 
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
+        transform.position += new Vector3(horizontalInput * speed, 0, 0);
+
+        transform.position += new Vector3(0, verticalInput * speed, 0);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) //this will not run unless IsTrigger is true in the collider (which disables other collision like with the ground, so we probably dont want to do that)
     {
