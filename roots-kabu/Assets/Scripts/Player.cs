@@ -13,10 +13,25 @@ public class Player : MonoBehaviour
         set { health = value; }
     }
 
-    [SerializeField] private bool isTitleScreen = false;
+
 
 
     [SerializeField] private float speed = 0.5f;
+
+    //speedup hacks
+    [SerializeField] private float fasterSpeed;//= 0.5f;
+    //[SerializeField] int speedDurationFrames;
+    private int speedFramesCountdown = 0;
+
+    public int SpeedFramesCountdown
+    {
+        get { return speedFramesCountdown; }
+        set { speedFramesCountdown = value; }
+    }
+
+
+
+
     [SerializeField] private float jumpPower = 10.0f;
 
     [SerializeField] private LayerMask groundLayer;
@@ -63,11 +78,6 @@ public class Player : MonoBehaviour
 
     }
 
-    bool playerStartMoving = false;
-    int baseFrameCount = 60;
-    int frameCount = 30;
-    int currentFrame = 0;
-    float titleScreenSpeed = 1.0f;
     void FixedUpdate()
     {
         //Camera Movement
@@ -76,23 +86,17 @@ public class Player : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = 0.0f;// Input.GetAxis("Vertical");
 
-        body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
-        if (horizontalInput != 0) {
-            playerStartMoving = true;
+        if(speedFramesCountdown <= 0)
+        {
+            body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
+            //frameCount = 0;
         }
-        if (isTitleScreen) {
-            if (!playerStartMoving) {
-                float speedFactor = Random.Range(1.0f, 2.0f);
-                body.velocity = new Vector3(1 * titleScreenSpeed * speedFactor, verticalInput * speed, 0);
-                currentFrame++;
-                if (currentFrame >= frameCount) {
-                    float frameFactor = Random.Range(1.0f, 2.0f);
-                    frameCount = (int)((float)baseFrameCount * frameFactor);
-                    titleScreenSpeed *= -1;
-                    currentFrame = 0;
-                }
-            }
+        else
+        {
+            body.velocity = new Vector3(horizontalInput * fasterSpeed, verticalInput * speed, 0);
+            speedFramesCountdown--;
         }
+
         //mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
 
         //pointCount++;
