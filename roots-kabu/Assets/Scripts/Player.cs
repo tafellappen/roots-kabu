@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     private Vector3 positionDiff;
 
-    LineRenderer mainLineRenderer;
+    //LineRenderer mainLineRenderer;
     private GameObject brush;
     int pointCount = 0;
 
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        mainLineRenderer = GetComponent<LineRenderer>();
+        //mainLineRenderer = GetComponent<LineRenderer>();
 
     }
 
@@ -75,10 +75,10 @@ public class Player : MonoBehaviour
         Debug.Log(pointCount);
         Debug.Log(transform.position);
 
-        mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
+        //mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
 
-        pointCount++;
-        mainLineRenderer.positionCount++;
+        //pointCount++;
+        //mainLineRenderer.positionCount++;
 
     }
 
