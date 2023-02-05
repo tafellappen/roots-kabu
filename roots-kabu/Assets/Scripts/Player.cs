@@ -72,8 +72,6 @@ public class Player : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
-        Debug.Log(pointCount);
-        Debug.Log(transform.position);
 
         mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
 
