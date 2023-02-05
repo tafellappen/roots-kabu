@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
     private Vector3 positionDiff;
 
     //LineRenderer mainLineRenderer;
-    private GameObject brush;
-    int pointCount = 0;
+    //private GameObject brush;
+    //int pointCount = 0;
 
     private void Awake()
     {
@@ -72,8 +72,6 @@ public class Player : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
-        Debug.Log(pointCount);
-        Debug.Log(transform.position);
 
         //mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
 
