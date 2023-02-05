@@ -22,6 +22,7 @@ public class TrailSpawner : MonoBehaviour
 
         if (frameCount >= trailSpawnFrameInterval)
         {
+            frameCount = 0;
             Instantiate(rootTrailPrefab, transform);
         }
     }
