@@ -20,9 +20,17 @@ public class SceneManager : MonoBehaviour
     {
         get {
             // make the speed faster as the progress goes
-            HealthBar healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-            float speed = upwardsMoveSpeed * (1.0f + Mathf.Sqrt(healthBar.score / 300.0f));
-            return speed;
+            GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
+            if (obj != null)
+            {
+                HealthBar healthBar = obj.GetComponent<HealthBar>();
+                float speed = upwardsMoveSpeed * (1.0f + Mathf.Sqrt(healthBar.score / 300.0f));
+                return speed;
+            }
+            else {
+                return upwardsMoveSpeed;
+            }
+
         }
     }
 
@@ -42,12 +50,19 @@ public class SceneManager : MonoBehaviour
     void FixedUpdate()
     {
         // make the nutrition more often as the time goes
-        HealthBar healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-        float scaler = (healthBar.score / 100.0f);
-        if (scaler > 8.0f) {
-            scaler = 8.0f;
+        GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
+        if (obj != null)
+        {
+            HealthBar healthBar = obj.GetComponent<HealthBar>();
+            float scaler = (healthBar.score / 100.0f);
+            if (scaler > 8.0f)
+            {
+                scaler = 8.0f;
+            }
+            nutrientSpawnInterval = (int)((float)originalNutrientSpawnInterval / scaler);
         }
-        nutrientSpawnInterval = (int)((float)originalNutrientSpawnInterval / scaler);
+           
+
 
         frameCount++;
 
