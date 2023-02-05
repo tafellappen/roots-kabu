@@ -10,16 +10,7 @@ public class Background : MonoBehaviour
     float scrollSpeed;
     void Start()
     {
-        transform.position = new Vector3(0, -5.83f, 0);
-        //SceneManager sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
-        //if (sceneManager != null)
-        //{
-        //    scrollSpeed = sceneManager.UpwardsMoveSpeed;
-        //}
-        //else {
-
-        //}
-        scrollSpeed = 0.05f;
+        transform.position = new Vector3(0, -5.7f, 0);
     }
 
     // Update is called once per frame
@@ -29,11 +20,22 @@ public class Background : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
+        GameObject obj = GameObject.Find("SceneManager");
+        if (obj != null)
+        {
+            SceneManager sceneManager = obj.GetComponent<SceneManager>();
+            scrollSpeed = sceneManager.UpwardsMoveSpeed;
+        }
+        else
+        {
+            scrollSpeed = 0.05f;
+        }
         transform.position = new Vector3(transform.position.x,
                                          transform.position.y + scrollSpeed,
                                          transform.position.z);
-        if (transform.position.y > 5.68f) {
-            transform.position = new Vector3(0,-5.83f,0);
+        if (transform.position.y > 5.7f) {
+            transform.position = new Vector3(0,-5.7f,0);
         }
     }
 }

@@ -18,7 +18,11 @@ public class Buttons : MonoBehaviour
         
     }
 
-    public void ReplayClicked() {
+    public void StartGameClicked() {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
+
+    public void ReplayClicked() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Titlescreen");
     }
 }
