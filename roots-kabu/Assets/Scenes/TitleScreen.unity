@@ -637,8 +637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30AD\u30FC\u3000A/D\uFF1A\u30E1\u30A4\u30F3\u30EB\u30FC\u30C8\u3092\u79FB\u52D5\n\n\u65B9\u5411\u30AD\u30FC\uFF1A
-    \u30D6\u30E9\u30F3\u30C1 \u30EB\u30FC\u30C8\u3092\u4F5C\u6210\n\n\u751F\u304D\u3066\u3044\u304F\u305F\u3081\u306E\u6804\u990A\u3092\u6442\u308A\u307E\u3057\u3087\u3046!"
+  m_text: "\u30AD\u30FC\u3000A/D\uFF1A\u30E1\u30A4\u30F3\u30EB\u30FC\u30C8\u3092\u79FB\u52D5\n\n\u751F\u304D\u3066\u3044\u304F\u305F\u3081\u306E\u6804\u990A\u3092\u6442\u308A\u307E\u3057\u3087\u3046!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
   m_sharedMaterial: {fileID: -1064029683018923364, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
@@ -853,6 +852,10 @@ PrefabInstance:
       propertyPath: spawnAreaMaxX
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
+      propertyPath: speedupPrefab
+      value: 
+      objectReference: {fileID: 3072278337083727727, guid: 538c6798b81084c9485d54c2602e1f46, type: 3}
     - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
       propertyPath: nutrientSpawnInterval
       value: 60
@@ -1854,6 +1857,7 @@ GameObject:
   - component: {fileID: 1998722956}
   - component: {fileID: 1998722955}
   - component: {fileID: 1998722954}
+  - component: {fileID: 1998722957}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1927,6 +1931,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1998722957
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998722953}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2076270304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,14 +2162,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Key A/D : Move Main Root
+  m_text: '
+
+    Key A/D : Move Main Root
 
 
-    Arrow Keys: Make Branch Root
-
-
-    Grab
-    nutritions to keep alive!'
+    Grab nutritions to keep alive!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
   m_sharedMaterial: {fileID: -1064029683018923364, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
@@ -2196,6 +2294,10 @@ PrefabInstance:
     - target: {fileID: 375640815102256278, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 375640815102256279, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
+      propertyPath: isTitleScreen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 375640815102256282, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_Name

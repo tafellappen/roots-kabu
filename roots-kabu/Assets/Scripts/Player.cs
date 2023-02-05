@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
 
 
-
+    [SerializeField] private bool isTitleScreen = false;
     [SerializeField] private float jumpPower = 10.0f;
 
     [SerializeField] private LayerMask groundLayer;
@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
 
     }
 
+    bool playerStartMoving = false;
+    int baseFrameCount = 60;
+    int frameCount = 30;
+    int currentFrame = 0;
+    float titleScreenSpeed = 1.0f;
     void FixedUpdate()
     {
         //Camera Movement
@@ -95,6 +100,27 @@ public class Player : MonoBehaviour
         {
             body.velocity = new Vector3(horizontalInput * fasterSpeed, verticalInput * speed, 0);
             speedFramesCountdown--;
+        }
+
+        if (horizontalInput != 0)
+        {
+            playerStartMoving = true;
+        }
+        if (isTitleScreen)
+        {
+            if (!playerStartMoving)
+            {
+                float speedFactor = Random.Range(1.0f, 2.0f);
+                body.velocity = new Vector3(1 * titleScreenSpeed * speedFactor, verticalInput * speed, 0);
+                currentFrame++;
+                if (currentFrame >= frameCount)
+                {
+                    float frameFactor = Random.Range(1.0f, 2.0f);
+                    frameCount = (int)((float)baseFrameCount * frameFactor);
+                    titleScreenSpeed *= -1;
+                    currentFrame = 0;
+                }
+            }
         }
 
         //mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
