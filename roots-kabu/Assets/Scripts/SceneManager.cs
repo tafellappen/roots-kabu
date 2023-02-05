@@ -9,6 +9,19 @@ public class SceneManager : MonoBehaviour
     int frameCount = 0;
     [SerializeField] Camera mainCamera;
 
+    //stuff to manage spawned objects
+    [SerializeField] float upwardsMoveSpeed;
+    [SerializeField] float maxUpwardsYPosition;
+    public float UpwardsMoveSpeed
+    {
+        get { return upwardsMoveSpeed; }
+    }
+
+    public float MaxUpwardsYPosition
+    {
+        get { return maxUpwardsYPosition; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
