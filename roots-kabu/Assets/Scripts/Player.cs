@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Camera Movement
-        mainCamera.transform.position = transform.position + positionDiff;
+        //mainCamera.transform.position = transform.position + positionDiff;
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
