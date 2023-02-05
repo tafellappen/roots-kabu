@@ -33,7 +33,7 @@ public class MoveUpwards : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         yPosition += upwardsMoveSpeed;
         transform.position = new Vector3(xPosition, yPosition, zPosition);
