@@ -6,6 +6,7 @@ public class SceneManager : MonoBehaviour
 {
     //needs to decide where to spawn nutrients
     [SerializeField] int nutrientSpawnInterval;
+    int originalNutrientSpawnInterval;
     int frameCount = 0;
     [SerializeField] GameObject nutrientPrefab;
     [SerializeField] Camera mainCamera;
@@ -17,7 +18,20 @@ public class SceneManager : MonoBehaviour
     //we can cheat and say the negative of the max upwards position is probably gonna also be offscreen, below the screen
     public float UpwardsMoveSpeed
     {
-        get { return upwardsMoveSpeed; }
+        get {
+            // make the speed faster as the progress goes
+            GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
+            if (obj != null)
+            {
+                HealthBar healthBar = obj.GetComponent<HealthBar>();
+                float speed = upwardsMoveSpeed * (1.0f + Mathf.Sqrt(healthBar.score / 300.0f));
+                return speed;
+            }
+            else {
+                return upwardsMoveSpeed;
+            }
+
+        }
     }
 
     public float MaxUpwardsYPosition
@@ -29,12 +43,27 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        originalNutrientSpawnInterval = nutrientSpawnInterval;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        // make the nutrition more often as the time goes
+        GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
+        if (obj != null)
+        {
+            HealthBar healthBar = obj.GetComponent<HealthBar>();
+            float scaler = (healthBar.score / 100.0f);
+            if (scaler > 8.0f)
+            {
+                scaler = 8.0f;
+            }
+            nutrientSpawnInterval = (int)((float)originalNutrientSpawnInterval / scaler);
+        }
+           
+
+
         frameCount++;
 
         if (frameCount >= nutrientSpawnInterval)
