@@ -182,6 +182,18 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
+      propertyPath: spawnAreaMaxX
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
+      propertyPath: upwardsMoveSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
+      propertyPath: nutrientSpawnInterval
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
 --- !u!1 &297787739
@@ -308,11 +320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 375640815102256278, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 375640815102256278, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.17
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 375640815102256278, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_LocalPosition.z
@@ -348,15 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 375640815102256282, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_Name
-      value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484066843534626725, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
-      propertyPath: rootTrailPrefab
-      value: 
-      objectReference: {fileID: 4106918851927608911, guid: 1b1e1d11781de0844b818b42cc35e0f6, type: 3}
-    - target: {fileID: 4484066843534626725, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
-      propertyPath: trailSpawnFrameInterval
-      value: 1
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
