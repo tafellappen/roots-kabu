@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
       propertyPath: upwardsMoveSpeed
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
       propertyPath: nutrientSpawnInterval
@@ -358,11 +358,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 375640815102256279, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
+      propertyPath: branchLeadPrefab
+      value: 
+      objectReference: {fileID: 375640815102256282, guid: 17fcdfe1b1908a24e91de279d797b30a, type: 3}
     - target: {fileID: 375640815102256282, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 375640815102256283, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -849,6 +854,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538c6798b81084c9485d54c2602e1f46, type: 3}
+--- !u!1 &1515504284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375640815102256282, guid: 36a438218c397944a80c6e0c289cda82, type: 3}
+  m_PrefabInstance: {fileID: 456042424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1515504291
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515504284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!1 &1714090391
 GameObject:
   m_ObjectHideFlags: 0

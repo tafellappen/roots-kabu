@@ -10,7 +10,7 @@ public class Nutritions : MonoBehaviour
     void Start()
     {
         randomScale = Random.Range(100, 200) / 100.0f;
-        Debug.Log(randomScale);
+        //Debug.Log(randomScale);
         transform.localScale *= randomScale;
     }
 

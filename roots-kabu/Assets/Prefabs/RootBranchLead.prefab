@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 375640815102256278}
   - component: {fileID: 375640815102256277}
-  - component: {fileID: 375640815102256279}
   - component: {fileID: 2978635015661516267}
   - component: {fileID: 375640815102256272}
   - component: {fileID: 4484066843534626725}
+  - component: {fileID: 4503563742847250715}
   m_Layer: 0
-  m_Name: Player
+  m_Name: RootBranchLead
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375640815102256282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.73, y: 2.17, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5001, y: 0.5001, z: 0.5001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,21 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &375640815102256279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375640815102256282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db48f14e586f644fa88057dee28ccf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  speed: 5
-  branchLeadPrefab: {fileID: 0}
 --- !u!58 &2978635015661516267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -154,3 +139,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailSpawnFrameInterval: 1
   rootTrailPrefab: {fileID: 4106918851927608911, guid: 1b1e1d11781de0844b818b42cc35e0f6, type: 3}
+--- !u!114 &4503563742847250715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375640815102256282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9539f5c59cf5ef64b9de25382edecab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
