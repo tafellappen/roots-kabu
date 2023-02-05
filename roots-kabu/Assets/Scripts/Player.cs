@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int health;
-    [SerializeField] private Camera mainCamera;
+    //[SerializeField] private Camera mainCamera;
 
     public int Health
     {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //invincibilityCountdown = invincibilityFrames;
-        positionDiff =  mainCamera.transform.position - transform.position;
+        //positionDiff =  mainCamera.transform.position - transform.position;
         //mainLineRenderer.SetPosition(0, transform.position);
     }
 
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         //mainCamera.transform.position = transform.position + positionDiff;
 
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = 0.0f;// Input.GetAxis("Vertical");
 
         body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
 
