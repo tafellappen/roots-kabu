@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
         }
         if (health > 0)
         {
-            health -= hpReductionSpeed * Time.deltaTime * Mathf.Sqrt(Mathf.Sqrt(score));
+            health -= hpReductionSpeed * Time.deltaTime * Mathf.Sqrt(score) * 0.75f;
             score += scoreIncreseSpeed * Time.deltaTime;
             scoreText.text = "Score: " + ((int)score).ToString();
         }

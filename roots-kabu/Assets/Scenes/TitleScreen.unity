@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Our New Game!
+  m_text: Roots!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
   m_sharedMaterial: {fileID: -1064029683018923364, guid: 4f9ecb783f07c4f3bac3ed0b02c4de3a, type: 2}
