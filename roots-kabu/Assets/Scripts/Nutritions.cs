@@ -5,6 +5,9 @@ using UnityEngine;
 public class Nutritions : MonoBehaviour
 {
     [SerializeField] float baseHealth = 0.05f;
+
+    [SerializeField] int speedDurationFrames;
+
     float randomScale = 1;
     AudioSource audioSource;
     [SerializeField] AudioClip collissionSFX;
@@ -33,6 +36,15 @@ public class Nutritions : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player") {
 
+            audioSource.clip = collissionSFX; //set the camera audio source to play whatever clip is assigned to this script
+            audioSource.Play();
+
+            if(baseHealth == 0.0f && speedDurationFrames > 0)
+            {
+                collision.GetComponent<Player>().SpeedFramesCountdown = speedDurationFrames;
+            }
+
+
             GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
             if (obj != null)
             {
@@ -48,8 +60,6 @@ public class Nutritions : MonoBehaviour
                 //{
                 //    audioSource.clip = getHurt;
                 //}
-                audioSource.clip = collissionSFX; //set the camera audio source to play whatever clip is assigned to this script
-                audioSource.Play();
                 if (healthBar.health > 1)
                 {
                     healthBar.health = 1.0f;

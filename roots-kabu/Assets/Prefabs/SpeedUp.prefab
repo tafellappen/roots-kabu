@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30295f74687814047a4f3d58a540f92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 0.05
+  baseHealth: 0
+  speedDurationFrames: 150
   collissionSFX: {fileID: 8300000, guid: caf7960d937cd16488817502bb3689b1, type: 3}
 --- !u!61 &3072278337083727723
 BoxCollider2D:

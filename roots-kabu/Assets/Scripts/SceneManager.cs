@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour
     int frameCount = 0;
     [SerializeField] GameObject nutrientPrefab;
     [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] GameObject speedupPrefab;
     [SerializeField] Camera mainCamera;
 
     //stuff to manage spawned objects
@@ -86,6 +87,10 @@ public class SceneManager : MonoBehaviour
             if (result == 2)
             {
                 Instantiate(obstaclePrefab, new Vector3(thisX, -MaxUpwardsYPosition * thisy, 0), Quaternion.identity);
+            }
+            else if (result == 1)
+            {
+                Instantiate(speedupPrefab, new Vector3(thisX, -MaxUpwardsYPosition * thisy, 0), Quaternion.identity);
             }
             thisX = Random.Range(-spawnAreaMaxX, spawnAreaMaxX);
             Instantiate(nutrientPrefab, new Vector3(thisX, -MaxUpwardsYPosition, 0), Quaternion.identity);
