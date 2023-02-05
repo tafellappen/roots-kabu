@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1740759345074989391}
   - component: {fileID: 3598356161848179891}
   m_Layer: 0
-  m_Name: Nutrition
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a051bfc6814354c4397de5c6fd7ff659, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d983da6e8036475b8e6099688b71502, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30295f74687814047a4f3d58a540f92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 0.05
+  baseHealth: -0.03
 --- !u!61 &3072278337083727723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6b30da0411a3480f9e5f76fe5d2d010, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3beccc8c2a9504c639d5ceaa0c966edd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

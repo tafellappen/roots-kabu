@@ -9,6 +9,7 @@ public class SceneManager : MonoBehaviour
     int originalNutrientSpawnInterval;
     int frameCount = 0;
     [SerializeField] GameObject nutrientPrefab;
+    [SerializeField] GameObject obstaclePrefab;
     [SerializeField] Camera mainCamera;
 
     //stuff to manage spawned objects
@@ -79,7 +80,14 @@ public class SceneManager : MonoBehaviour
             frameCount = 0;
 
             float thisX = Random.Range(-spawnAreaMaxX, spawnAreaMaxX);
+            float thisy = Random.Range(1.0f, 1.2f);
 
+            int result = Random.Range(1, 3);
+            if (result == 2)
+            {
+                Instantiate(obstaclePrefab, new Vector3(thisX, -MaxUpwardsYPosition * thisy, 0), Quaternion.identity);
+            }
+            thisX = Random.Range(-spawnAreaMaxX, spawnAreaMaxX);
             Instantiate(nutrientPrefab, new Vector3(thisX, -MaxUpwardsYPosition, 0), Quaternion.identity);
 
         }
