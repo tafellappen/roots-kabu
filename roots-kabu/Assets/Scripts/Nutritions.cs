@@ -25,15 +25,22 @@ public class Nutritions : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player") {
-            HealthBar healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-            healthBar.health += baseHealth * randomScale;
 
-            AudioSource audioSource = GetComponent<AudioSource>();
-            audioSource.Play();
-            if (healthBar.health > 1)
+            GameObject obj = GameObject.FindGameObjectWithTag("HealthBar");
+            if (obj != null)
             {
-                healthBar.health = 1.0f;
+                HealthBar healthBar = obj.GetComponent<HealthBar>();
+                healthBar.health += baseHealth * randomScale;
+
+                AudioSource audioSource = GetComponent<AudioSource>();
+                audioSource.Play();
+                if (healthBar.health > 1)
+                {
+                    healthBar.health = 1.0f;
+                }
             }
+                
+
             Destroy(this.gameObject);
         }
 
