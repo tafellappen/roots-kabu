@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nutrientSpawnInterval: 300
   nutrientPrefab: {fileID: 3072278337083727727, guid: 538c6798b81084c9485d54c2602e1f46, type: 3}
+  obstaclePrefab: {fileID: 3072278337083727727, guid: 099ff0970624248b09db0d3cb2786d26, type: 3}
   mainCamera: {fileID: 0}
   upwardsMoveSpeed: 0.05
   maxUpwardsYPosition: 6
