@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4484066843534626725}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  mainCamera: {fileID: 0}
   speed: 5
   jumpPower: 10
   groundLayer:
@@ -170,5 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a389345b26902409cec71ddeee46ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trailSpawnFrameInterval: 0
-  rootTrailPrefab: {fileID: 0}
+  trailSpawnFrameInterval: 1
+  rootTrailPrefab: {fileID: 4106918851927608911, guid: 1b1e1d11781de0844b818b42cc35e0f6, type: 3}
