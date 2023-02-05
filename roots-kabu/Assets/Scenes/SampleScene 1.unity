@@ -187,6 +187,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
+      propertyPath: speedupPrefab
+      value: 
+      objectReference: {fileID: 3072278337083727727, guid: cb6be3779f62b644c93eb23d6e4ff0ff, type: 3}
+    - target: {fileID: 5477830154834728275, guid: 8e2e4e341b7754d4d9c69f7f8b8b9812, type: 3}
       propertyPath: upwardsMoveSpeed
       value: 0.1
       objectReference: {fileID: 0}
