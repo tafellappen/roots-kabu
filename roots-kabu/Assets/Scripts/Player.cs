@@ -28,18 +28,22 @@ public class Player : MonoBehaviour
     //private Animator animator;
     private BoxCollider2D boxCollider;
 
-    private float wallJumpCD;
-
-
     private float horizontalInput;
     private float verticalInput;
 
     private Vector3 positionDiff;
+
+    LineRenderer mainLineRenderer;
+    private GameObject brush;
+    int pointCount = 0;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        mainLineRenderer = GetComponent<LineRenderer>();
+
     }
 
     // Start is called before the first frame update
@@ -47,6 +51,7 @@ public class Player : MonoBehaviour
     {
         //invincibilityCountdown = invincibilityFrames;
         positionDiff =  mainCamera.transform.position - transform.position;
+        //mainLineRenderer.SetPosition(0, transform.position);
     }
 
     // Update is called once per frame
@@ -61,14 +66,20 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Camera Movement
-        //mainCamera.transform.position = transform.position + positionDiff;
+        mainCamera.transform.position = transform.position + positionDiff;
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.position += new Vector3(horizontalInput * speed, 0, 0);
+        body.velocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
+        Debug.Log(pointCount);
+        Debug.Log(transform.position);
 
-        transform.position += new Vector3(0, verticalInput * speed, 0);
+        mainLineRenderer.SetPosition(pointCount, gameObject.transform.position);
+
+        pointCount++;
+        mainLineRenderer.positionCount++;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //this will not run unless IsTrigger is true in the collider (which disables other collision like with the ground, so we probably dont want to do that)
