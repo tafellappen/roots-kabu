@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: -0.03
+  collissionSFX: {fileID: 8300000, guid: 3beccc8c2a9504c639d5ceaa0c966edd, type: 3}
 --- !u!61 &3072278337083727723
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Nutritions : MonoBehaviour
     [SerializeField] float baseHealth = 0.05f;
     float randomScale = 1;
     AudioSource audioSource;
+    [SerializeField] AudioClip collissionSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,16 @@ public class Nutritions : MonoBehaviour
                 HealthBar healthBar = obj.GetComponent<HealthBar>();
                 healthBar.health += baseHealth * randomScale;
 
+                //if (baseHealth > 0)
+                //{
+                //    audioSource.clip = getHealth;
+
+                //}
+                //else if (baseHealth < 0)
+                //{
+                //    audioSource.clip = getHurt;
+                //}
+                audioSource.clip = collissionSFX; //set the camera audio source to play whatever clip is assigned to this script
                 audioSource.Play();
                 if (healthBar.health > 1)
                 {
