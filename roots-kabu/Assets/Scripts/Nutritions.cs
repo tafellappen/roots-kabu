@@ -27,6 +27,9 @@ public class Nutritions : MonoBehaviour
         if (collision.gameObject.tag == "Player") {
             HealthBar healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
             healthBar.health += baseHealth * randomScale;
+
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
             if (healthBar.health > 1)
             {
                 healthBar.health = 1.0f;
