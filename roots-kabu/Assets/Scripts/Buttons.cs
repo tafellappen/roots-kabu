@@ -25,4 +25,8 @@ public class Buttons : MonoBehaviour
     public void ReplayClicked() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Titlescreen");
     }
+    public void QuitClicked()
+    {
+        Application.Quit();
+    }
 }
